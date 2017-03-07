@@ -1,0 +1,18 @@
+{
+  "name": "phi-livesolve",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.6.2",
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "pg": "^6.1.2"
+  }
+}
