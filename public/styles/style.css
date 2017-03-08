@@ -5,13 +5,19 @@
 header, footer, .banner{
   text-align: center;
 }
+
+header, footer{
+  background-color: skyblue;
+  padding: 10px; 
+}
 .container{
   width: 800px;
   margin: auto;
 }
 nav {
-  margin: auto;
+  margin: 0 auto;
   text-align: center;
+  background-color: powderblue;
 }
 
 li{
@@ -27,6 +33,7 @@ li{
 
 a{
   text-decoration: none;
+  color: darkslategrey;
 }
 
 a:hover{
