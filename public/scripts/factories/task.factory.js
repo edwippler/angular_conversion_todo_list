@@ -1,6 +1,4 @@
 myApp.factory('TaskFactory',['$http', function($http){
-  var testArrayVariable = ['queso', 'bagel', 'donald bagel', 'salsa', 'Carolyn'];
-  testArrayVariable.pop();
 
   var factoryTasks = { list: [] };
 
@@ -19,8 +17,6 @@ myApp.factory('TaskFactory',['$http', function($http){
 
 //this is the public API, if it's not in here, the controller won't see it.
   return {
-    testProperty: 'taco',
-    testArray: testArrayVariable,
     allTasks: factoryTasks,
     editTasks: getTasks
   };
