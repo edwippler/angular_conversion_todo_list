@@ -1,32 +1,11 @@
-myApp.controller('TaskController', ['$http',  function($http){
+myApp.controller('TaskController', ['$http', 'TaskFactory', function($http, TaskFactory){
   console.log('task controller was created');
   var self = this;
   self.newTask = {};
-  self.taskList = [];
+  self.someThingToGOOnTheView = TaskFactory.testProperty;
+  self.someRandomArray = TaskFactory.testArray;
+  self.taskList = TaskFactory.allTasks;
 
-  // // ajax function
-  // function getTasks() {
-  //   $.ajax({
-  //     type: 'GET',
-  //     url: '/tasks',
-  //     success: function(response) {
-  //       console.log('get tasks response ->', response);
-  //       appendTasks(response);
-  //     }
-  //   });
-  // }
-
-  getTasks();
-
-  function getTasks() {
-    $http({
-      method: 'GET',
-      url: '/tasks'
-    }).then(function(response){
-      console.log(response.data);
-      self.taskList = response.data;
-    });
-  }
 
 self.addTask = function() {
   $http({
@@ -35,7 +14,8 @@ self.addTask = function() {
     data: self.newTask
   }).then(function(response){
     console.log(response);
-    getTasks();
+    TaskFactory.editTasks();
+    self.newTask = {};
   });
 }
 
@@ -44,7 +24,7 @@ self.deleteTask = function(id) {
     method: 'DELETE',
     url: '/tasks/' + id
   }).then(function(response){
-    getTasks();
+    TaskFactory.editTasks();
   });
 }
 
@@ -53,7 +33,7 @@ self.updateTask = function(id) {
     method: 'PUT',
     url: '/tasks/complete/' + id
   }).then(function(response){
-    getTasks();
+    TaskFactory.editTasks();
   });
 }
 
@@ -62,7 +42,7 @@ self.revertTask = function(id) {
     method: 'PUT',
     url: '/tasks/revert/' + id
   }).then(function(response){
-    getTasks();
+    TaskFactory.editTasks();
   });
 }
 
