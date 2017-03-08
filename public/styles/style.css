@@ -2,6 +2,37 @@
   background-color: purple;
 }*/
 
+header, footer, .banner{
+  text-align: center;
+}
+.container{
+  width: 800px;
+  margin: auto;
+}
+nav {
+  margin: auto;
+  text-align: center;
+}
+
+li{
+  margin: auto;
+  padding: 0 25px;
+  display: inline-block;
+  list-style-image: none;
+}
+
 .complete {
   color: tomato;
 }
+
+a{
+  text-decoration: none;
+}
+
+a:hover{
+  color: seagreen;
+}
+
+/*.active {
+  color: blue;
+}*/
